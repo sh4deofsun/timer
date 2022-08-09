@@ -49,18 +49,12 @@ def timerReset():
 def rndAds():
     adList = ["TDM is so cool tool!",
     "QAA is the best departmant!",
-    "Batuhan is the best Tech-Support!",
-    "Don't talk too much Nigar!",
-    "Ahmet DAL is the best!",
-    "Robot Framework v5.0 is out!",
     "Please update your Board",
     "Jenkins: This is how we do automation",
     "This is the way!",
     "Oh! You finally awake",
-    "Batuhan not recommend to use RF v3",
     "Did you know? TDM built with Django",
     "Did you know what are these? BDD, KDD, DDD",
-    "We have best Scrum master and her name is Esra",
     "This is the way I test it",
     "Hold my beer, I got this bug",
     "Coffee! You can sleep when you're dead!",
@@ -100,9 +94,31 @@ btn_reset.grid(row=2,column=0,sticky="nsew")
 frm_buttons.grid(row=0,column=1)
 
 # Ads
-frm_ads = tk.Frame(master=rootWindow,height=False)
+frm_ads = tk.Frame(master=rootWindow,height=False,width=5)
 lbl_ads = tk.Label(master=frm_ads,text=rndAds(),font=('Times New Roman', 15))
 lbl_ads.pack()
 frm_ads.grid(row=1,column=0)
+
+# Members
+MemberList = ["Member 1Member",
+            "Member 2Member",
+            "Member 3Member",
+            "Member 4Member",
+            "Member 5Member",
+            "Member 6Member",
+            "Member 7Member",
+            "Me ber 8Member",
+            "AMember 9Member",
+            "Member 10Member",
+            "Member 11Member",
+            "Member 12Member",
+            ]
+
+frm_members = tk.Frame(master=rootWindow)
+for number, member in enumerate(sorted(MemberList)):
+    cbx_member = tk.Checkbutton(master=frm_members,text=member)
+    cbx_member.grid(row=int(number/2),column=(number%2),sticky=tk.NSEW)
+
+frm_members.grid(row=2,column=0)
 
 rootWindow.mainloop()
